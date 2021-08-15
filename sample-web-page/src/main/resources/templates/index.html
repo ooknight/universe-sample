@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh" th:replace="~{fragments/bootstrap::render(~{::title},~{},~{},${@ui.breadcrumb('首页')},~{::main})}" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="#{ui.title}">universe</title>
+</head>
+<body>
+<main class="container mt-3">
+    <table class="table table-bordered table-hover">
+        <thead>
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>created</th>
+            <th>updated</th>
+            <th>state</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    <!--<nav th:replace="fragments/common::pagination(0,0)"></nav>-->
+    <!--<nav th:replace="fragments/common::pagination(1,1)"></nav>-->
+    <!--<nav th:replace="fragments/common::pagination(1,10)"></nav>-->
+    <!--<nav th:replace="fragments/common::pagination(2,10)"></nav>-->
+    <!--<nav th:replace="fragments/common::pagination(10,10)"></nav>-->
+    <!--<nav th:replace="fragments/common::pagination(11,10)"></nav>-->
+
+    <!--<p sec:authorize="hasRole('OP')">i am op user</p>-->
+    <!--<p sec:authorize="hasRole('BANK')">i am bank user</p>-->
+    <!--<p sec:authentication="name">Bob</p>-->
+    <!--<p sec:authentication="principal.authorities">[ROLE_USER, ROLE_ADMIN]</p>-->
+</main>
+</body>
+</html>

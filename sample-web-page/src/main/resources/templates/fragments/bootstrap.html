@@ -1,0 +1,91 @@
+<!--suppress ThymeleafVariablesResolveInspection -->
+<!DOCTYPE html>
+<html lang="zh" th:fragment="render(title,style,script,breadcrumb,content)" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <title th:replace="${title}">universe</title>
+    <link href="data:;base64,=" rel="icon">
+    <link rel="stylesheet" th:href="@{/bootstrap/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/bootstrap/bootstrap-icons.css}">
+    <link rel="stylesheet" th:href="@{/app.css}">
+    <link rel="stylesheet" th:replace="${style}">
+</head>
+<body>
+
+<header class="p-3 mb-3 border-bottom">
+    <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <a class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none" href="/">
+
+                <img alt="bootstrap" aria-label="bootstrap" class="bi me-2" height="32" role="img" th:src="@{/bootstrap/bootstrap.svg}" width="40">
+                <!--<i class="bi-bootstrap"></i>-->
+                <!--<svg class="bi" width="32" height="32" fill="currentColor"><use xlink:href="/bootstrap/bootstrap-icons.svg#bootstrap"/></svg>-->
+            </a>
+
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                <li><a class="nav-link px-2 link-secondary" href="#">Overview</a></li>
+                <li><a class="nav-link px-2 link-dark" href="#">Inventory</a></li>
+                <li><a class="nav-link px-2 link-dark" href="#">Customers</a></li>
+                <li><a class="nav-link px-2 link-dark" href="#">Products</a></li>
+                <li>
+                    <a class="nav-link text-white" href="#">
+                        <svg class="bi d-block mx-auto mb-1" height="24" width="24">
+                            <use xlink:href="#grid"/>
+                        </svg>
+                        Products
+                    </a>
+                </li>
+            </ul>
+
+            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+                <input aria-label="Search" class="form-control" placeholder="Search..." type="search">
+            </form>
+
+            <div class="dropdown text-end">
+                <a aria-expanded="false" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" href="#" id="dropdownUser1">
+                    <img alt="mdo" class="rounded-circle" height="40" th:src="@{/a85.png}" width="40">
+                </a>
+                <ul aria-labelledby="dropdownUser1" class="dropdown-menu text-small">
+                    <li><a class="dropdown-item" href="#">New project...</a></li>
+                    <li><a class="dropdown-item" href="#">Settings</a></li>
+                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="#">Sign out</a></li>
+                </ul>
+            </div>
+
+            <!--            <div class="dropdown text-end">-->
+            <!--                <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">-->
+            <!--                    <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">-->
+            <!--                </a>-->
+            <!--                <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">-->
+            <!--                    <li><a class="dropdown-item" href="#">New project...</a></li>-->
+            <!--                    <li><a class="dropdown-item" href="#">Settings</a></li>-->
+            <!--                    <li><a class="dropdown-item" href="#">Profile</a></li>-->
+            <!--                    <li><hr class="dropdown-divider"></li>-->
+            <!--                    <li><a class="dropdown-item" href="#">Sign out</a></li>-->
+            <!--                </ul>-->
+            <!--            </div>-->
+        </div>
+    </div>
+</header>
+
+
+<nav th:if="${breadcrumb}">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item" th:classappend="${state.last}?'active'" th:each="item,state:${breadcrumb}" th:text="${item}"></li>
+    </ol>
+</nav>
+<main class="container" th:replace="${content}">
+</main>
+
+
+<script th:src="@{/jquery/jquery.slim.min.js}"></script>
+<script th:src="@{/bootstrap/bootstrap.bundle.min.js}"></script>
+<script th:src="@{/app.js}"></script>
+<script th:replace="${script}"></script>
+</body>
+</html>

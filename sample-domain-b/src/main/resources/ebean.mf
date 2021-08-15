@@ -1,0 +1,1 @@
+entity-packages: io.github.ooknight.universe.sample.domain.b.entity

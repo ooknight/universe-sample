@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="zh" th:replace="~{fragments/bootstrap :: render(~{::title},~{},~{},~{},~{::main})}" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="#{ui.title}">universe</title>
+</head>
+<body>
+<main class="container">
+    <div class="alert alert-warning mt-4">
+        <p><h4 class="alert-heading" th:text="${status} + ' ' + ${error}"></h4></p>
+        <p th:text="${message}"></p>
+        <ul>
+            <li th:each="x:${errors}" th:text="${x.defaultMessage}"></li>
+        </ul>
+        <hr>
+        <p th:text="${#calendars.format(timestamp,'yyyy-MM-dd HH:mm:ss.SSS')}"></p>
+        <p th:text="${path}"></p>
+        <p th:text="${exception}"></p>
+    </div>
+    <div class="shadow-none p-2 mb-5 bg-light rounded">
+        <pre><code th:text="${trace}"></code></pre>
+    </div>
+</main>
+</body>
+</html>
