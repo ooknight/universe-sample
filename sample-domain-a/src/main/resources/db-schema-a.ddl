@@ -1,9 +1,9 @@
-DROP TABLE IF EXISTS e_ax;
+DROP TABLE IF EXISTS e_ax CASCADE;
 
 -- ======== ======== ======== ========
 -- ax
 -- ======== ======== ======== ========
-CREATE TABLE e_ax
+CREATE TABLE IF NOT EXISTS e_ax
 (
     id       BIGSERIAL             NOT NULL,
     name_    VARCHAR               NULL,

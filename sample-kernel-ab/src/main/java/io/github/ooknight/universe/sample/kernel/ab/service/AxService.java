@@ -1,4 +1,4 @@
-package io.github.ooknight.universe.sample.kernel.service.ab;
+package io.github.ooknight.universe.sample.kernel.ab.service;
 
 import io.github.ooknight.universe.core.domain.x.DOMAIN;
 import io.github.ooknight.universe.sample.domain.a.entity.Ax;

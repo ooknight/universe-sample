@@ -25,7 +25,7 @@ public class Testing {
         QBx query = new QBx().id.le(100L);
         List<Bx> result = query.findList();
         Assertions.assertEquals(3, result.size());
-        Assertions.assertEquals("select t0.id, t0.name_, t0.created_, t0.updated_, t0.deleted_ from e_bx t0 where t0.id <= ? and t0.deleted_ = false", query.getGeneratedSql());
+        Assertions.assertEquals("select t0.id, t0.name_, t0.created_, t0.updated_, t0.deleted_, t0.ax_id from e_bx t0 where t0.id <= ? and t0.deleted_ = false", query.getGeneratedSql());
     }
 
 }

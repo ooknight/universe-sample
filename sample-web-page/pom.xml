@@ -5,7 +5,7 @@
     <parent>
         <groupId>io.github.ooknight</groupId>
         <artifactId>universe-sample</artifactId>
-        <version>1.1.0</version>
+        <version>1.1.1</version>
     </parent>
 
     <artifactId>sample-web-page</artifactId>
@@ -13,23 +13,42 @@
     <dependencies>
         <dependency>
             <groupId>io.github.ooknight</groupId>
+            <artifactId>sample-kernel-ab</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.github.ooknight</groupId>
+            <artifactId>sample-kernel-c</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.github.ooknight</groupId>
             <artifactId>universe-core-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.github.ooknight.ui</groupId>
+            <artifactId>bootstrap</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.github.ooknight.ui</groupId>
+            <artifactId>bootstrap-icons</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.github.ooknight.ui</groupId>
+            <artifactId>jquery</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
         <dependency>
-            <groupId>io.github.ooknight</groupId>
-            <artifactId>bootstrap</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>io.github.ooknight</groupId>
-            <artifactId>bootstrap-icons</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>io.github.ooknight</groupId>
-            <artifactId>jquery</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 

@@ -5,13 +5,13 @@ import io.github.ooknight.universe.sample.domain.a.entity.Ax;
 import io.github.ooknight.universe.sample.domain.a.entity.query.QAx;
 import io.github.ooknight.universe.sample.domain.b.entity.Bx;
 import io.github.ooknight.universe.sample.domain.b.entity.query.QBx;
-import io.github.ooknight.universe.sample.kernel.service.ab.AxService;
-import io.github.ooknight.universe.sample.kernel.service.ab.BxService;
+import io.github.ooknight.universe.sample.kernel.ab.service.AxService;
+import io.github.ooknight.universe.sample.kernel.ab.service.BxService;
+import static io.github.ooknight.universe.support.utils.COMBINE.x;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.jdbc.SqlGroup;
 
@@ -21,7 +21,6 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @SpringBootTest(classes = KernelConfiguration.class)
 @EnableAutoConfiguration
-@ComponentScan("io.github.ooknight.universe.sample.kernel.service.ab")
 @SqlGroup({
     @Sql("classpath:db-schema-a.ddl"),
     @Sql("classpath:db-schema-b.ddl"),
@@ -34,6 +33,12 @@ public class Testing {
     private AxService axs;
     @Resource
     private BxService bxs;
+
+    @Test
+    void test0() {
+        x.console.echo(axs);
+        x.console.echo(bxs);
+    }
 
     @Test
     void test1() {

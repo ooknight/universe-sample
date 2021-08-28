@@ -1,4 +1,4 @@
-package io.github.ooknight.universe.sample.kernel.service.c;
+package io.github.ooknight.universe.sample.kernel.c.service;
 
 import io.github.ooknight.universe.sample.domain.a.entity.Ax;
 import io.github.ooknight.universe.sample.domain.b.entity.Bx;
@@ -6,6 +6,7 @@ import io.github.ooknight.universe.sample.domain.c.entity.Cx;
 
 import io.ebean.Database;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 
@@ -15,6 +16,7 @@ public class CxService {
     @Resource
     private Database db;
 
+    @Transactional
     public Cx create(String nameAx, String nameBx, String nameCx) {
 
         Ax ax = new Ax();

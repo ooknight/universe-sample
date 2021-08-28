@@ -1,9 +1,9 @@
-DROP TABLE IF EXISTS e_cx;
+DROP TABLE IF EXISTS e_cx CASCADE;
 
 -- ======== ======== ======== ========
 -- cx
 -- ======== ======== ======== ========
-CREATE TABLE e_cx
+CREATE TABLE IF NOT EXISTS e_cx
 (
     id       BIGSERIAL             NOT NULL,
     name_    VARCHAR               NULL,
@@ -12,5 +12,5 @@ CREATE TABLE e_cx
     created_ TIMESTAMP             NULL,
     updated_ TIMESTAMP             NULL,
     CONSTRAINT cx_pk PRIMARY KEY (id),
-    CONSTRAINT cx_fk_bx FOREIGN KEY (bx_id) REFERENCES e_bx (id)
+    CONSTRAINT cx_fk_bx FOREIGN KEY (bx_id) REFERENCES e_bx (id) deferrable
 );
